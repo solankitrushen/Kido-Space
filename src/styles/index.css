@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   html {
     font-family: 'DM Sans', sans-serif !important;
@@ -34,4 +35,18 @@ input.defaultCheckbox::before path {
 
 input:checked.defaultCheckbox::before {
   opacity: 1;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.card-animation {
+  animation: slideIn 0.5s ease-in-out forwards;
 }

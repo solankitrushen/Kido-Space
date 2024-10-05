@@ -48,12 +48,12 @@ function CheckTable(props: { tableData: any }) {
       id: 'artworks',
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          ARTWORKS
+          Achivments 🏆
         </p>
       ),
       cell: (info) => (
-        <p className="text-md font-medium text-gray-600 dark:text-white">
-          {info.getValue()}
+        <p className="text-md ml-4  font-medium text-gray-600 dark:text-white">
+          {info.getValue()} 🏆
         </p>
       ),
     }),

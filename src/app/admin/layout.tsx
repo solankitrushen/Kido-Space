@@ -40,7 +40,7 @@ export default function Admin({ children }: { children: React.ReactNode }) {
               {children}
             </div>
             <div className="p-3">
-              <Footer />
+              {/* <Footer /> */}
             </div>
           </div>
         </main>

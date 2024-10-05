@@ -10,45 +10,51 @@ import {
   MdPerson,
   MdLock,
 } from 'react-icons/md';
-
+import SimulationIcon from './components/CustomeIcone/Simulation-Icon'
+import Explore from 'components/CustomeIcone/Explore';
+import Learning from 'components/CustomeIcone/Learning';
+import Profile from 'components/CustomeIcone/profile';
+import Login from 'components/CustomeIcone/login';
 const routes = [
+  // {
+  //   name: 'Main Dashboard',
+  //   layout: '/admin',
+  //   path: 'default',
+  //   icon: <MdHome className="h-6 w-6" />,
+  // },
   {
-    name: 'Main Dashboard',
+    name: 'Learning',
     layout: '/admin',
-    path: 'default',
-    icon: <MdHome className="h-6 w-6" />,
-  },
-  {
-    name: 'NFT Marketplace',
-    layout: '/admin',
-    path: 'nft-marketplace',
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
+    path: 'Learning',
+    icon: <Learning />,
 
     secondary: true,
   },
   {
-    name: 'Data Tables',
+    name: 'Explore',
     layout: '/admin',
-    icon: <MdBarChart className="h-6 w-6" />,
+    path: 'nft-marketplace',
+    icon: <Explore/>,
+
+    secondary: true,
+  },
+  {
+    name: 'Simulation',
+    layout: '/admin',
+    icon: <SimulationIcon  />,
     path: 'data-tables',
   },
   {
     name: 'Profile',
     layout: '/admin',
     path: 'profile',
-    icon: <MdPerson className="h-6 w-6" />,
+    icon: <Profile />,
   },
   {
     name: 'Sign In',
     layout: '/auth',
     path: 'sign-in',
-    icon: <MdLock className="h-6 w-6" />,
-  },
-  {
-    name: 'RTL Admin',
-    layout: '/rtl',
-    path: 'rtl-default',
-    icon: <MdHome className="h-6 w-6" />,
+    icon: <Login/>,
   },
 ];
 export default routes;

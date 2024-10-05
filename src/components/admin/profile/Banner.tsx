@@ -27,7 +27,7 @@ const Banner = () => {
         <h4 className="text-xl font-bold text-navy-700 dark:text-white">
           Adela Parkson
         </h4>
-        <h5 className="text-base font-normal text-gray-600">Product Manager</h5>
+        <h5 className="text-base font-normal text-gray-600">CodeX</h5>
       </div>
 
       {/* Post followers */}
@@ -36,19 +36,19 @@ const Banner = () => {
           <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
             17
           </h4>
-          <p className="text-sm font-normal text-gray-600">Posts</p>
+          <p className="text-sm font-normal text-gray-600">Projects 🪐</p>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
             9.7K
           </h4>
-          <p className="text-sm font-normal text-gray-600">Followers</p>
+          <p className="text-sm font-normal text-gray-600">Achivments 🏆 </p>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
             434
           </h4>
-          <p className="text-sm font-normal text-gray-600">Following</p>
+          <p className="text-sm font-normal text-gray-600">streak ⚡️</p>
         </div>
       </div>
     </Card>
