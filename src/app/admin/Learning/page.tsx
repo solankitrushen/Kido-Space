@@ -1,6 +1,8 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import CourseSidebar from 'components/Courselist/CourseSidebar';
 import TracingBeamDemo from 'components/Trasing/TracingBeamDemo';
+
 
 // Define your content data
 const contentData = [
@@ -23,19 +25,32 @@ const contentData = [
       </>
     ),
     badge: 'Space Explorer',
-    media: '/module1.mp4', // Direct path to the media
-    mediaType: 'video', // Specify 'image' or 'video'
+    media: '/module1.mp4', 
+    mediaType: 'video', 
   },
+
 ];
 
 function Page() {
+  const [activeUnit, setActiveUnit] = useState(0); 
+
+  // Ensure activeUnit is within bounds
+  const activeContent = contentData[activeUnit] || {
+    title: 'Content not available',
+    description: <p>Please select a valid unit.</p>,
+    badge: 'Unavailable',
+    media: null,
+    mediaType: null,
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr]">
       <div className="sticky top-0 h-auto w-full overflow-y-auto p-4 lg:h-screen">
-        <CourseSidebar />
+        <CourseSidebar activeUnit={activeUnit} setActiveUnit={setActiveUnit} />
       </div>
       <div className="w-full overflow-y-auto p-4 lg:h-screen">
-        <TracingBeamDemo content={contentData} />
+        <TracingBeamDemo content={[activeContent]} />
+
       </div>
     </div>
   );

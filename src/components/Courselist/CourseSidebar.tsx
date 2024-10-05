@@ -1,6 +1,6 @@
 'use client';
 import { Book } from 'lucide-react';
-import { useState } from 'react';
+import React from 'react';
 import Learn from './Learn';
 
 interface UnitProps {
@@ -38,7 +38,7 @@ const Unit: React.FC<UnitProps> = ({
     >
       {title}
     </p>
-  </div>
+  </ div>
 );
 
 const CourseChallenge: React.FC = () => (
@@ -56,14 +56,20 @@ const CourseChallenge: React.FC = () => (
   </div>
 );
 
-export default function Component() {
-  const [activeUnit, setActiveUnit] = useState<number | null>(1); // Active unit state
+interface SidebarProps {
+  activeUnit: number;
+  setActiveUnit: (unit: number) => void;
+}
 
+const CourseSidebar: React.FC<SidebarProps> = ({
+  activeUnit,
+  setActiveUnit,
+}) => {
   return (
     <div className="mx-auto max-w-2xl rounded-lg p-6">
       <div className="mb-6 flex items-center">
         <div className="mr-4 rounded-full p-3">
-          <div className=" flex h-[100px] w-[130px] items-center justify-center rounded-full ">
+          <div className="flex h-[100px] w-[130px] items-center justify-center rounded-full ">
             <img
               src="/space.png" // Path to the image in the public folder
               alt="Space Icon"
@@ -83,66 +89,68 @@ export default function Component() {
         <Unit
           number={1}
           title="Introduction to the Solar System"
-          isActive={activeUnit === 1}
-          onClick={() => setActiveUnit(1)} // Clicking makes this unit active
+          isActive={activeUnit === 0}
+          onClick={() => setActiveUnit(0)} // Clicking makes this unit active
         />
         <Unit
           number={2}
           title="The Planets: Characteristics and Exploration"
-          isActive={activeUnit === 2}
-          onClick={() => setActiveUnit(2)} // Clicking makes this unit active
+          isActive={activeUnit === 1}
+          onClick={() => setActiveUnit(1)} // Clicking makes this unit active
         />
         <Unit
           number={3}
           title="Stars and Constellations"
-          isActive={activeUnit === 3}
-          onClick={() => setActiveUnit(3)} // Clicking makes this unit active
+          isActive={activeUnit === 2}
+          onClick={() => setActiveUnit(2)} // Clicking makes this unit active
         />
         <Unit
           number={4}
           title="Galaxies and Black Holes"
-          isActive={activeUnit === 4}
-          onClick={() => setActiveUnit(4)} // Clicking makes this unit active
+          isActive={activeUnit === 3}
+          onClick={() => setActiveUnit(3)} // Clicking makes this unit active
         />
         <Unit
           number={5}
           title="Space Missions and Technologies"
-          isActive={activeUnit === 5}
-          onClick={() => setActiveUnit(5)} // Clicking makes this unit active
+          isActive={activeUnit === 4}
+          onClick={() => setActiveUnit(4)} // Clicking makes this unit active
         />
         <Unit
           number={6}
           title="Astronomy Tools and Techniques"
-          isActive={activeUnit === 6}
-          onClick={() => setActiveUnit(6)} // Clicking makes this unit active
+          isActive={activeUnit === 5}
+          onClick={() => setActiveUnit(5)} // Clicking makes this unit active
         />
         <Unit
           number={7}
           title="Living in Space: Life Beyond Earth"
-          isActive={activeUnit === 7}
-          onClick={() => setActiveUnit(7)} // Clicking makes this unit active
+          isActive={activeUnit === 6}
+          onClick={() => setActiveUnit(6)} // Clicking makes this unit active
         />
         <Unit
           number={8}
           title="Space Exploration History"
-          isActive={activeUnit === 8}
-          onClick={() => setActiveUnit(8)} // Clicking makes this unit active
+          isActive={activeUnit === 7}
+          onClick={() => setActiveUnit(7)} // Clicking makes this unit active
         />
         <Unit
           number={9}
           title="Future of Space Exploration"
-          isActive={activeUnit === 9}
-          onClick={() => setActiveUnit(9)} // Clicking makes this unit active
+          isActive={activeUnit === 8}
+          onClick={() => setActiveUnit(8)} // Clicking makes this unit active
         />
         <Unit
           number={10}
           title="Extraterrestrial Life: Possibilities and Search"
-          isActive={activeUnit === 10}
-          onClick={() => setActiveUnit(10)} // Clicking makes this unit active
+          isActive={activeUnit === 9}
+          onClick={() => setActiveUnit(9)} // Clicking makes this unit active
         />
       </div>
 
       <CourseChallenge />
     </div>
   );
-}
+};
+
+export default CourseSidebar;
