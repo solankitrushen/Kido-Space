@@ -71,33 +71,38 @@ const Marketplace = () => {
 
             {/* Space Discoveries trending card */}
             <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
-             <NftCard
+        <NftCard
   bidders={[avatar1, avatar2, avatar3]}
-  title="Andromeda Galaxy"
-  author="NASA"
-  price="500 ETH"  // Example price
-  image={NFt3}
-  extra="Contains over a trillion stars"  // Use this for additional details
-  onExplore={() => console.log('Exploring Andromeda Galaxy')}
-/>
-<NftCard
-  bidders={[avatar1, avatar2, avatar3]}
-  title="Pulsar Star"
-  author="ESA"
-  price="300 ETH"  // Example price
-  image={NFt2}
-  extra="Emits radiation beams"
-  onExplore={() => console.log('Exploring Pulsar Star')}
-/>
-<NftCard
-  bidders={[avatar1, avatar2, avatar3]}
-  title="Mars Surface"
-  author="SpaceX"
-  price="450 ETH"  // Example price
+  title="Saturn Rings"
+  author="Hubble"
+  price="200 ETH"  // Example price
   image={NFt4}
-  extra="Rich in iron oxide"
-  onExplore={() => console.log('Exploring Mars Surface')}
+  extra="Composed of ice particles"  // Use extra instead of description
+  onExplore={() => console.log('Exploring Saturn Rings')}
 />
+
+
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Saturn Rings"
+  author="Hubble"
+  price="200 ETH"  // Example price
+  image={NFt4}
+  extra="Composed of ice particles"  // Use extra instead of description
+  onExplore={() => console.log('Exploring Saturn Rings')}
+/>
+
+
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Saturn Rings"
+  author="Hubble"
+  price="200 ETH"  // Example price
+  image={NFt4}
+  extra="Composed of ice particles"  // Use extra instead of description
+  onExplore={() => console.log('Exploring Saturn Rings')}
+/>
+
 
             </div>
 
