@@ -8,9 +8,8 @@ const Card = ({ className, ...props }) => (
   <div className={cn('rounded-lg bg-white shadow-md', className)} {...props} />
 );
 
-const CardHeader = ({ className, ...props }) => (
-    className?: string; // Make className optional
-  <div className={cn('px-6 py-4', className)} {...props} />
+const CardHeader = ({ className = '', ...props }) => (
+  <div className={`px-6 py-4 ${className}`} {...props} />
 );
 
 const CardTitle = ({ className, ...props }) => (
