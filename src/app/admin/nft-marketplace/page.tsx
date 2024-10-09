@@ -116,26 +116,35 @@ const Marketplace = () => {
             {/* Recently Added Space Discoveries */}
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
               <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Saturn Rings"
-                author="Hubble"
-                description="Composed of ice particles"
-                image={NFt4}
-              />
-              <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Jupiter's Storm"
-                author="JPL"
-                description="Contains 300 ppm of carbon"
-                image={NFt5}
-              />
-              <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Black Hole"
-                author="NASA"
-                description="Has a mass of 10 solar masses"
-                image={NFt6}
-              />
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Saturn Rings"
+  author="Hubble"
+  price="200 ETH"  // Add the price prop if required
+  image={NFt4}
+  extra="Composed of ice particles"  // Use 'extra' instead of 'description'
+  onExplore={() => console.log('Exploring Saturn Rings')} 
+/>
+
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Jupiter's Storm"
+  author="JPL"
+  price="150 ETH"  // Add the price prop if required
+  image={NFt5}
+  extra="Contains 300 ppm of carbon"  // Use 'extra' instead of 'description'
+  onExplore={() => console.log('Exploring Jupiter's Storm')} 
+/>
+
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Black Hole"
+  author="NASA"
+  price="300 ETH"  // Add the price prop if required
+  image={NFt6}
+  extra="Has a mass of 10 solar masses"  // Use 'extra' instead of 'description'
+  onExplore={() => console.log('Exploring Black Hole')} 
+/>
+
             </div>
           </div>
 
@@ -154,30 +163,35 @@ const Marketplace = () => {
           <div className="flex w-full flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
             <div className="flex-1">
               <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Saturn Rings"
-                author="Hubble"
-                description="Composed of ice particles"
-                image={NFt4}
-              />
-            </div>
-            <div className="flex-1">
-              <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Jupiter's Storm"
-                author="JPL"
-                description="Contains 300 ppm of carbon"
-                image={NFt5}
-              />
-            </div>
-            <div className="flex-1">
-              <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Black Hole"
-                author="NASA"
-                description="Has a mass of 10 solar masses"
-                image={NFt6}
-              />
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Saturn Rings"
+  author="Hubble"
+  price="200 ETH"  // Add the price prop if required
+  image={NFt4}
+  extra="Composed of ice particles"  // Use 'extra' instead of 'description'
+  onExplore={() => console.log('Exploring Saturn Rings')} 
+/>
+
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Jupiter's Storm"
+  author="JPL"
+  price="150 ETH"  // Add the price prop if required
+  image={NFt5}
+  extra="Contains 300 ppm of carbon"  // Use 'extra' instead of 'description'
+  onExplore={() => console.log('Exploring Jupiter's Storm')} // 
+/>
+
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Black Hole"
+  author="NASA"
+  price="300 ETH"  // Add the price prop if required
+  image={NFt6}
+  extra="Has a mass of 10 solar masses"  // Use 'extra' instead of 'description'
+  onExplore={() => console.log('Exploring Black Hole')} 
+/>
+
             </div>
           </div>
         </div>
