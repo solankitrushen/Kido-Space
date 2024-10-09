@@ -1,33 +1,53 @@
 import React, { useState } from 'react';
 
 // Utility function for combining class names
-const cn = (...classes) => classes.filter(Boolean).join(' ');
+const cn = (...classes: string[]) => classes.filter(Boolean).join(' ');
 
 // Card components
-const Card = ({ className, ...props }) => (
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
+
+const Card: React.FC<CardProps> = ({ className, ...props }) => (
   <div className={cn('rounded-lg bg-white shadow-md', className)} {...props} />
 );
 
-const CardHeader = ({ className = '', ...props }) => (
+const CardHeader: React.FC<CardProps> = ({ className = '', ...props }) => (
   <div className={`px-6 py-4 ${className}`} {...props} />
 );
 
-const CardTitle = ({ className, ...props }) => (
+const CardTitle: React.FC<CardProps> = ({ className, ...props }) => (
   <h2 className={cn('text-2xl font-bold', className)} {...props} />
 );
 
-const CardContent = ({ className, ...props }) => (
+const CardContent: React.FC<CardProps> = ({ className, ...props }) => (
   <div className={cn('px-6 py-4', className)} {...props} />
 );
 
 // Accordion components
-const Accordion = ({ children }) => (
+interface AccordionProps {
+  children: React.ReactNode;
+}
+
+const Accordion: React.FC<AccordionProps> = ({ children }) => (
   <div className="divide-y divide-gray-200">{children}</div>
 );
 
-const AccordionItem = ({ children }) => <div className="py-4">{children}</div>;
+const AccordionItem: React.FC<AccordionProps> = ({ children }) => (
+  <div className="py-4">{children}</div>
+);
 
-const AccordionTrigger = ({ children, isOpen, onClick }) => (
+interface AccordionTriggerProps {
+  children: React.ReactNode;
+  isOpen: boolean;
+  onClick: () => void;
+}
+
+const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
+  children,
+  isOpen,
+  onClick,
+}) => (
   <button
     className="flex w-full items-center justify-between text-left"
     onClick={onClick}
@@ -42,16 +62,26 @@ const AccordionTrigger = ({ children, isOpen, onClick }) => (
   </button>
 );
 
-const AccordionContent = ({ children, isOpen }) => (
-  <div
-    className={cn('mt-2 text-sm text-gray-600', isOpen ? 'block' : 'hidden')}
-  >
+interface AccordionContentProps {
+  children: React.ReactNode;
+  isOpen: boolean;
+}
+
+const AccordionContent: React.FC<AccordionContentProps> = ({
+  children,
+  isOpen,
+}) => (
+  <div className={cn('mt-2 text-sm text-gray-600', isOpen ? 'block' : 'hidden')}>
     {children}
   </div>
 );
 
 // Button component
-const Button = ({ className, ...props }) => (
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ className, ...props }) => (
   <button
     className={cn('font-medium text-blue-600 hover:text-blue-800', className)}
     {...props}
@@ -59,7 +89,11 @@ const Button = ({ className, ...props }) => (
 );
 
 // ChevronIcon component
-const ChevronIcon = ({ className }) => (
+interface ChevronIconProps {
+  className?: string;
+}
+
+const ChevronIcon: React.FC<ChevronIconProps> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -77,7 +111,12 @@ const ChevronIcon = ({ className }) => (
 );
 
 // FAQ component
-const faqs = [
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQ[] = [
   {
     question: 'What workload can I expect if I enroll in this diploma?',
     answer:
@@ -97,16 +136,16 @@ const faqs = [
   // ... (13 more items would be added here in a real application)
 ];
 
-export default function FAQComponent() {
-  const [showAll, setShowAll] = useState(false);
-  const [openItem, setOpenItem] = useState(null);
+const FAQComponent: React.FC = () => {
+  const [showAll, setShowAll] = useState<boolean>(false);
+  const [openItem, setOpenItem] = useState<number | null>(null);
   const displayedFaqs = showAll ? faqs : faqs.slice(0, 3);
 
   return (
-    <Card className="mx-auto w-full max-w-3xl text-black dark:bg-navy-800 dark:text-white ">
+    <Card className="mx-auto w-full max-w-3xl text-black dark:bg-navy-800 dark:text-white">
       <CardHeader>
-    <CardTitle>Frequently asked questions</CardTitle>
-  </CardHeader>
+        <CardTitle>Frequently asked questions</CardTitle>
+      </CardHeader>
       <CardContent>
         <Accordion>
           {displayedFaqs.map((faq, index) => (
@@ -129,4 +168,6 @@ export default function FAQComponent() {
       </CardContent>
     </Card>
   );
-}
+};
+
+export default FAQComponent;
