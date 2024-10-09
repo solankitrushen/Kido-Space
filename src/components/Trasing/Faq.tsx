@@ -105,8 +105,8 @@ export default function FAQComponent() {
   return (
     <Card className="mx-auto w-full max-w-3xl text-black dark:bg-navy-800 dark:text-white ">
       <CardHeader>
-        <CardTitle>Frequently asked questions</CardTitle>
-      </CardHeader>
+    <CardTitle>Frequently asked questions</CardTitle>
+  </CardHeader>
       <CardContent>
         <Accordion>
           {displayedFaqs.map((faq, index) => (
