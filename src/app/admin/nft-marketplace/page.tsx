@@ -71,27 +71,34 @@ const Marketplace = () => {
 
             {/* Space Discoveries trending card */}
             <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
-              <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Andromeda Galaxy"
-                author="NASA"
-                description="Contains over a trillion stars"
-                image={NFt3}
-              />
-              <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Pulsar Star"
-                author="ESA"
-                description="Emits radiation beams"
-                image={NFt2}
-              />
-              <NftCard
-                bidders={[avatar1, avatar2, avatar3]}
-                title="Mars Surface"
-                author="SpaceX"
-                description="Rich in iron oxide"
-                image={NFt4}
-              />
+             <NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Andromeda Galaxy"
+  author="NASA"
+  price="500 ETH"  // Example price
+  image={NFt3}
+  extra="Contains over a trillion stars"  // Use this for additional details
+  onExplore={() => console.log('Exploring Andromeda Galaxy')}
+/>
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Pulsar Star"
+  author="ESA"
+  price="300 ETH"  // Example price
+  image={NFt2}
+  extra="Emits radiation beams"
+  onExplore={() => console.log('Exploring Pulsar Star')}
+/>
+<NftCard
+  bidders={[avatar1, avatar2, avatar3]}
+  title="Mars Surface"
+  author="SpaceX"
+  price="450 ETH"  // Example price
+  image={NFt4}
+  extra="Rich in iron oxide"
+  onExplore={() => console.log('Exploring Mars Surface')}
+/>
+
             </div>
 
             {/* Recently Added section */}
