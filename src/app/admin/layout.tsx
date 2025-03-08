@@ -2,17 +2,17 @@
 // Layout components
 import { usePathname } from 'next/navigation';
 import { useContext, useState } from 'react';
-import routes from 'routes';
+import routes from '../../routes';
 import {
   getActiveNavbar,
   getActiveRoute,
   isWindowAvailable,
-} from 'utils/navigation';
+} from '../../utils/navigation';
 import React from 'react';
 import { Portal } from '@chakra-ui/portal';
-import Navbar from 'components/navbar';
-import Sidebar from 'components/sidebar';
-import Footer from 'components/footer/Footer';
+import Navbar from '../../components/navbar';
+import Sidebar from '../../components/sidebar';
+import Footer from '../../components/footer/Footer';
 
 export default function Admin({ children }: { children: React.ReactNode }) {
   // states and functions

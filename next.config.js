@@ -8,7 +8,7 @@
 //   '@fullcalendar/react',
 
 const nextConfig = {
-  swcMinify: true,
+  // swcMinify is now enabled by default in Next.js 13+
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   images: {
@@ -19,10 +19,8 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-  experimental: {
-    appDir: true,
-  },
-
+  // appDir is now enabled by default in Next.js 13+
+  
   // Ignore ESLint and TypeScript errors during build
   eslint: {
     ignoreDuringBuilds: true, // Disable ESLint during build

@@ -1,6 +1,6 @@
 'use client';
 
-import Banner from 'components/admin/nft-marketplace/Banner';
+import Banner from '../../../../components/admin/nft-marketplace/Banner';
 import NFt2 from '/public/img/nfts/Nft2.png';
 import NFt4 from '/public/img/nfts/Nft4.png';
 import NFt3 from '/public/img/nfts/Nft3.png';
@@ -10,11 +10,11 @@ import avatar1 from '/public/img/avatars/avatar1.png';
 import avatar2 from '/public/img/avatars/avatar2.png';
 import avatar3 from '/public/img/avatars/avatar3.png';
 
-import tableDataTopCreators from 'variables/nfts/marketplace/tableDataTopCreators';
-import HistoryCard from 'components/admin/nft-marketplace/HistoryItem';
-import TopCreatorTable from 'components/admin/nft-marketplace/TableTopCreators';
-import NftCard from 'components/card/NftCard';
-import { LikedNftsProvider } from 'components/card/LikedNftsContext';
+import tableDataTopCreators from '../../../../variables/nfts/marketplace/tableDataTopCreators';
+import HistoryCard from '../../../../components/admin/nft-marketplace/HistoryItem';
+import TopCreatorTable from '../../../../components/admin/nft-marketplace/TableTopCreators';
+import NftCard from '../../../../components/card/NftCard';
+import { LikedNftsProvider } from '../../../../components/card/LikedNftsContext';
 import Link from 'next/link';
 
 const MarketplacePage = () => {

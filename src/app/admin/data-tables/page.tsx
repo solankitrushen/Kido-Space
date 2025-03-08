@@ -1,6 +1,6 @@
 'use client';
 import BigCard from '../../../components/BigCard/page'
-import PlanetCard from 'components/VieCard/PlanetCard';
+import PlanetCard from "../../../components/VieCard/PlanetCard";;
 
 const Tables = () => {
   return (

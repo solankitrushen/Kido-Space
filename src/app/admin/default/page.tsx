@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import CourseSidebar from 'components/Courselist/CourseSidebar';
-import TracingBeamDemo from 'components/Trasing/TracingBeamDemo';
+import CourseSidebar from '../../../components/Courselist/CourseSidebar';
+import TracingBeamDemo from '../../../components/Trasing/TracingBeamDemo';
 
 // Define your content data
 const contentData = [

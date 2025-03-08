@@ -1,9 +1,9 @@
 'use client';
 import React, { ReactNode } from 'react';
-import 'styles/App.css';
-import 'styles/Contact.css';
-import 'styles/MiniCalendar.css';
-import 'styles/index.css';
+import "../styles/App.css";;
+import "../styles/Contact.css";;
+import "../styles/MiniCalendar.css";;
+import "../styles/index.css";;
 
 import dynamic from 'next/dynamic';
 
