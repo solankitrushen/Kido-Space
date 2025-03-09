@@ -1,11 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-const Button = () => {
+const Button = ({ currentUnit = 0, totalUnits = 5 }) => {
+  const router = useRouter();
+  
+  // Calculate the next unit (with wrapping)
+  const nextUnit = (currentUnit + 1) % totalUnits;
+  
+  const handleContinueLearning = () => {
+    // Navigate to the next unit
+    router.push(`/admin/default?unit=${nextUnit}`);
+  };
+
   return (
     <StyledWrapper>
-      <button>
-        <span className='text-white' >Continue Learning</span>
+      <button onClick={handleContinueLearning}>
+        <span className='text-white'>Continue Learning</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

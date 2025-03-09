@@ -7,8 +7,13 @@ import Faq from './Faq';
 import Button from '../../app/admin/default/Quiz/Button';
 import QuizApp from '../../app/admin/default/Video-Quiz/page'; // Ensure this path is correct
 import LazyVideo, { VideoRef } from '../video/LazyVideo';
+import { useSearchParams } from 'next/navigation';
 
 export default function TracingBeamDemo({ content }) {
+  const searchParams = useSearchParams();
+  const unitParam = searchParams.get('unit');
+  const currentUnit = unitParam ? parseInt(unitParam, 10) : 0;
+  
   const [showQuiz, setShowQuiz] = useState(false);
   const [quizTriggered, setQuizTriggered] = useState(false);
   const [showResult, setShowResult] = useState(false);
@@ -119,7 +124,7 @@ export default function TracingBeamDemo({ content }) {
         ))}
         <Faq />
         <div className="justify-left mt-6 flex">
-          <Learn />
+          <Learn currentUnit={currentUnit} totalUnits={5} />
           <Button />
         </div>
       </div>

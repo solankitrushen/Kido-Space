@@ -2,6 +2,7 @@
 import { Book } from 'lucide-react';
 import React from 'react';
 import Learn from './Learn';
+import { useRouter } from 'next/navigation';
 
 interface UnitProps {
   number: number;
@@ -59,7 +60,6 @@ const CourseChallenge: React.FC = () => (
 interface SidebarProps {
   activeUnit: number;
   tab: number;
-
   setActiveUnit: (unit: number) => void;
 }
 
@@ -68,6 +68,14 @@ const CourseSidebar: React.FC<SidebarProps> = ({
   setActiveUnit,
   tab
 }) => {
+  const router = useRouter();
+
+  // Function to handle unit selection with URL update
+  const handleUnitSelect = (unitIndex: number) => {
+    setActiveUnit(unitIndex);
+    router.push(`/admin/default?unit=${unitIndex}`);
+  };
+
   return (
     <div className="mx-auto max-w-2xl rounded-lg p-6">
       <div className="mb-6 flex items-center">
@@ -93,61 +101,31 @@ const CourseSidebar: React.FC<SidebarProps> = ({
           number={1}
           title="Introduction to the Solar System"
           isActive={activeUnit === 0}
-          onClick={() => setActiveUnit(0)} // Clicking makes this unit active
+          onClick={() => handleUnitSelect(0)} // Use the new handler
         />
         <Unit
           number={2}
           title="The Planets: Characteristics and Exploration"
           isActive={activeUnit === 1}
-          onClick={() => setActiveUnit(1)} // Clicking makes this unit active
+          onClick={() => handleUnitSelect(1)} // Use the new handler
         />
         <Unit
           number={3}
-          title="Stars and Constellations"
+          title="Beyond the Solar System: Exoplanets"
           isActive={activeUnit === 2}
-          onClick={() => setActiveUnit(2)} // Clicking makes this unit active
+          onClick={() => handleUnitSelect(2)} // Use the new handler
         />
         <Unit
           number={4}
-          title="Galaxies and Black Holes"
+          title="Space Missions and Future Exploration"
           isActive={activeUnit === 3}
-          onClick={() => setActiveUnit(3)} // Clicking makes this unit active
+          onClick={() => handleUnitSelect(3)} // Use the new handler
         />
         <Unit
           number={5}
-          title="Space Missions and Technologies"
+          title="Living in Space: Challenges and Solutions"
           isActive={activeUnit === 4}
-          onClick={() => setActiveUnit(4)} // Clicking makes this unit active
-        />
-        <Unit
-          number={6}
-          title="Astronomy Tools and Techniques"
-          isActive={activeUnit === 5}
-          onClick={() => setActiveUnit(5)} // Clicking makes this unit active
-        />
-        <Unit
-          number={7}
-          title="Living in Space: Life Beyond Earth"
-          isActive={activeUnit === 6}
-          onClick={() => setActiveUnit(6)} // Clicking makes this unit active
-        />
-        <Unit
-          number={8}
-          title="Space Exploration History"
-          isActive={activeUnit === 7}
-          onClick={() => setActiveUnit(7)} // Clicking makes this unit active
-        />
-        <Unit
-          number={9}
-          title="Future of Space Exploration"
-          isActive={activeUnit === 8}
-          onClick={() => setActiveUnit(8)} // Clicking makes this unit active
-        />
-        <Unit
-          number={10}
-          title="Extraterrestrial Life: Possibilities and Search"
-          isActive={activeUnit === 9}
-          onClick={() => setActiveUnit(9)} // Clicking makes this unit active
+          onClick={() => handleUnitSelect(4)} // Use the new handler
         />
       </div>
 
